@@ -1,0 +1,14 @@
+{
+    "atajos": [
+        {
+            "id": "1",
+            "atajo": "Atajo 1",
+            "desc": "Descripcion de atajo 1"
+        },
+        {
+            "id": "2",
+            "atajo": "Atajo 2",
+            "desc": "Descripcion de atajo 2"
+        }
+    ]
+}
