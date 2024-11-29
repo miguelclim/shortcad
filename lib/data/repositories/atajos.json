@@ -1,14 +1,70 @@
 {
-    "atajos": [
+    "Categorias":[
         {
             "id": "1",
-            "atajo": "Atajo 1",
-            "desc": "Descripcion de atajo 1"
+            "nombre":"Gestionar Pantalla"
         },
         {
             "id": "2",
-            "atajo": "Atajo 2",
-            "desc": "Descripcion de atajo 2"
+            "nombre":"Gestionar Dibujos"
+        },
+        {
+            "id": "3",
+            "nombre":"Manejar Flujo de Trabajo"
+        }
+    ],
+    "Manage Screen": [
+        {
+            "id": "1",
+            "atajo": "Ctrl+0 (zero)",
+            "desc": "Borra la pantalla."
+        },
+        {
+            "id": "2",
+            "atajo": "Ctrl+1",
+            "desc": "Paleta Propiedades."
+        },
+        {
+            "id": "3",
+            "atajo": "Ctrl+2",
+            "desc": "Paleta Design Center."
+        },
+        {
+            "id": "4",
+            "atajo": "Ctrl+3",
+            "desc": "Paleta Herramientas."
+        },
+        {
+            "id": "5",
+            "atajo": "Ctrl+4",
+            "desc": "Paleta Conjunto de planos."
+        }
+    ],
+    "Manage Drawing": [
+        {
+            "id": "1",
+            "atajo": "Ctrl+N",
+            "desc": "Nuevo dibujo."
+        },
+        {
+            "id": "2",
+            "atajo": "Ctrl+S",
+            "desc": "Guarda el dibujo."
+        },
+        {
+            "id": "3",
+            "atajo": "Ctrl+O",
+            "desc": "Abre el dibujo."
+        },
+        {
+            "id": "4",
+            "atajo": "Ctrl+P",
+            "desc": "Cuadro de diálogo Trazado."
+        },
+        {
+            "id": "5",
+            "atajo": "Ctrl+Tab",
+            "desc": "Pasa al dibujo siguiente."
         }
     ]
 }
