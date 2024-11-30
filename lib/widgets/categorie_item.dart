@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shortcad/app/pages/home/home_page.dart';
+import 'package:shortcad/app/utils/app_colors.dart';
 
 class CategorieItem extends StatefulWidget {
   const CategorieItem({super.key, required this.item});
@@ -14,9 +16,19 @@ class _CategorieItemState extends State<CategorieItem> {
     return Card(
       key: ValueKey(widget.item["id"]),
       margin: const EdgeInsets.all(10),
-      color: Colors.red,
+      color: AppColors.primary,
       child: ListTile(
-        title: Text(widget.item["nombre"]),
+        title: Text(
+          widget.item["nombre"],
+          style: TextStyle(color: AppColors.neutral),
+        ),
+        onTap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => HomePage(cat: widget.item["nombre"],
+                      )));
+        },
       ),
     );
   }

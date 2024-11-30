@@ -2,12 +2,14 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:shortcad/widgets/my_app_bar.dart';
 import 'package:shortcad/widgets/my_gesture_detector.dart';
 import 'package:shortcad/widgets/my_side_menu.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  const HomePage({super.key, required String this.cat});
 
+  final String cat;
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -25,15 +27,20 @@ class _HomePageState extends State<HomePage> {
   }
 
   @override
+  void initState() {
+    if (widget.cat != "") {
+      readJson(widget.cat);
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Shortcad'),
-      ),
+      appBar: MyAppBar(),
       body: MyGestureDetector(
         lista: _items,
-        onTapFunction: () => readJson("Manage Screen"),
-        onDobleTapFunction: () => readJson("Manage Drawing"),
+        onTapFunction: () => readJson("Gestionar Pantalla"),
+        onDobleTapFunction: () => readJson("Gestionar Dibujos"),
       ),
       drawer: MySideMenu(),
     );

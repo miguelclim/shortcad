@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shortcad/app/utils/app_colors.dart';
 
 class Item extends StatefulWidget {
   const Item({super.key, required this.item});
@@ -14,11 +15,16 @@ class _ItemState extends State<Item> {
     return Card(
       key: ValueKey(widget.item["id"]),
       margin: const EdgeInsets.all(10),
-      color: Colors.red,
+      color: AppColors.primary,
       child: ListTile(
-        leading: Text(widget.item["id"]),
-        title: Text(widget.item["atajo"]),
-        subtitle: Text(widget.item["desc"]),
+        title: Text(
+          widget.item["atajo"],
+          style: TextStyle(color: AppColors.neutral),
+        ),
+        subtitle: Text(
+          widget.item["desc"],
+          style: TextStyle(color: AppColors.neutral_2),
+        ),
       ),
     );
   }

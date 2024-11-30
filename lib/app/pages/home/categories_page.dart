@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shortcad/widgets/categories_list.dart';
+import 'package:shortcad/widgets/my_app_bar.dart';
 import 'package:shortcad/widgets/my_side_menu.dart';
 
 class CategoriesPage extends StatefulWidget {
@@ -32,9 +33,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Shortcad'),
-      ),
+      appBar: MyAppBar(),
       body: CategoriesList(listaCategorias: (_items)),
       drawer: MySideMenu(),
     );
