@@ -3,8 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:shortcad/widgets/my_list.dart';
 
 class MyGestureDetector extends StatefulWidget {
-  const MyGestureDetector({super.key, required this.lista,required this.onTapFunction, required this.onDobleTapFunction});
-  
+  const MyGestureDetector(
+      {super.key,
+      required this.lista,
+      required this.onTapFunction,
+      required this.onDobleTapFunction});
+
   final List lista;
   final AsyncCallback onTapFunction;
   final AsyncCallback onDobleTapFunction;
@@ -19,7 +23,11 @@ class _MyGestureDetectorState extends State<MyGestureDetector> {
       child: GestureDetector(
         onTap: widget.onTapFunction,
         onDoubleTap: widget.onDobleTapFunction,
-        child: widget.lista.isNotEmpty? MyLista(lista:widget.lista): Center(child: Text("Realiza un gesto"),),
+        child: widget.lista.isNotEmpty
+            ? MyLista(lista: widget.lista)
+            : Center(
+                child: Text("Realiza un gesto"),
+              ),
       ),
     );
   }

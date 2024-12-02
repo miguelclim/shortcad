@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:shortcad/app/utils/app_colors.dart';
 
-class Item extends StatefulWidget {
-  const Item({super.key, required this.item});
+class MyListItem extends StatefulWidget {
+  const MyListItem({super.key, required this.item});
   final item;
 
   @override
-  State<Item> createState() => _ItemState();
+  State<MyListItem> createState() => _MyListItemState();
 }
 
-class _ItemState extends State<Item> {
+class _MyListItemState extends State<MyListItem> {
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -18,11 +18,11 @@ class _ItemState extends State<Item> {
       color: AppColors.primary,
       child: ListTile(
         title: Text(
-          widget.item["atajo"],
+          widget.item["comando"],
           style: TextStyle(color: AppColors.neutral),
         ),
         subtitle: Text(
-          widget.item["desc"],
+          widget.item["funcion"],
           style: TextStyle(color: AppColors.neutral_2),
         ),
       ),

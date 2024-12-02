@@ -1,70 +1,279 @@
 {
-    "Categorias":[
+    "Categorias": [
         {
             "id": "1",
-            "nombre":"Gestionar Pantalla"
+            "nombre": "Activación/desactivación y administración de pantalla"
         },
         {
             "id": "2",
-            "nombre":"Gestionar Dibujos"
+            "nombre": "Gestionar pantalla"
         },
         {
             "id": "3",
-            "nombre":"Manejar Flujo de Trabajo"
-        }
-    ],
-    "Gestionar Pantalla": [
-        {
-            "id": "1",
-            "atajo": "Ctrl+0 (zero)",
-            "desc": "Borra la pantalla."
-        },
-        {
-            "id": "2",
-            "atajo": "Ctrl+1",
-            "desc": "Paleta Propiedades."
-        },
-        {
-            "id": "3",
-            "atajo": "Ctrl+2",
-            "desc": "Paleta Design Center."
+            "nombre": "Gestionar dibujos"
         },
         {
             "id": "4",
-            "atajo": "Ctrl+3",
-            "desc": "Paleta Herramientas."
+            "nombre": "Activa o desactiva los modos de dibujo"
         },
         {
             "id": "5",
-            "atajo": "Ctrl+4",
-            "desc": "Paleta Conjunto de planos."
+            "nombre": "Gestionar el flujo de trabajo"
         }
     ],
-    "Gestionar Dibujos": [
+    "Activación/desactivación y administración de pantalla": [
         {
             "id": "1",
-            "atajo": "Ctrl+N",
-            "desc": "Nuevo dibujo."
+            "comando": "Ctrl+G",
+            "funcion": "Activa o desactiva la rejilla."
         },
         {
             "id": "2",
-            "atajo": "Ctrl+S",
-            "desc": "Guarda el dibujo."
+            "comando": "Ctrl+E",
+            "funcion": "Permite recorrer los planos isométricos."
         },
         {
             "id": "3",
-            "atajo": "Ctrl+O",
-            "desc": "Abre el dibujo."
+            "comando": "Ctrl+F",
+            "funcion": "Activa o desactiva las referencias a objetos en ejecución."
         },
         {
             "id": "4",
-            "atajo": "Ctrl+P",
-            "desc": "Cuadro de diálogo Trazado."
+            "comando": "Ctrl+H",
+            "funcion": "Activa o desactiva la selección de estilo."
         },
         {
             "id": "5",
-            "atajo": "Ctrl+Tab",
-            "desc": "Pasa al dibujo siguiente."
+            "comando": "Ctrl+Shift+H",
+            "funcion": "Alterna entre las paletas ocultas."
+        },
+        {
+            "id": "6",
+            "comando": "Ctrl+I",
+            "funcion": "Activa o desactiva las coordenadas."
+        },
+        {
+            "id": "7",
+            "comando": "Ctrl+Shift+I",
+            "funcion": "Activa o desactiva Deducir restricciones."
+        }
+    ],
+    "Gestionar pantalla": [
+        {
+            "id": "1",
+            "comando": "Ctrl+0 (zero)",
+            "funcion": "Borra la pantalla."
+        },
+        {
+            "id": "2",
+            "comando": "Ctrl+1",
+            "funcion": "Paleta Propiedades."
+        },
+        {
+            "id": "3",
+            "comando": "Ctrl+2",
+            "funcion": "Paleta Design Center."
+        },
+        {
+            "id": "4",
+            "comando": "Ctrl+3",
+            "funcion": "Paleta Herramientas."
+        },
+        {
+            "id": "5",
+            "comando": "Ctrl+4",
+            "funcion": "Paleta Conjunto de planos."
+        },
+        {
+            "id": "6",
+            "comando": "Ctrl+6",
+            "funcion": "Administrador de DBConnect."
+        },
+        {
+            "id": "7",
+            "comando": "Ctrl+7",
+            "funcion": "Paleta Administrador de conjuntos de marcas."
+        },
+        {
+            "id": "8",
+            "comando": "Ctrl+8",
+            "funcion": "Calculadora rápida."
+        },
+        {
+            "id": "9",
+            "comando": "Ctrl+9",
+            "funcion": "Línea de comandos."
+        }
+    ],
+    "Gestionar dibujos": [
+        {
+            "id": "1",
+            "comando": "Ctrl+N",
+            "funcion": "Nuevo dibujo."
+        },
+        {
+            "id": "2",
+            "comando": "Ctrl+S",
+            "funcion": "Guarda el dibujo."
+        },
+        {
+            "id": "3",
+            "comando": "Ctrl+O",
+            "funcion": "Abre el dibujo."
+        },
+        {
+            "id": "4",
+            "comando": "Ctrl+P",
+            "funcion": "Cuadro de diálogo Trazado."
+        },
+        {
+            "id": "5",
+            "comando": "Ctrl+Tab",
+            "funcion": "Pasa al dibujo siguiente."
+        },
+        {
+            "id": "6",
+            "comando": "Ctrl+Shift+Tab",
+            "funcion": "Pasa al dibujo anterior."
+        },
+        {
+            "id": "7",
+            "comando": "Ctrl+Page Up",
+            "funcion": "Pasa a la ficha anterior del dibujo actual."
+        },
+        {
+            "id": "8",
+            "comando": "Ctrl+Page Down",
+            "funcion": "Pasa a la ficha siguiente del dibujo actual."
+        },
+        {
+            "id": "9",
+            "comando": "Ctrl+Q",
+            "funcion": "Permite salir."
+        },
+        {
+            "id": "10",
+            "comando": "Ctrl+Shift+S",
+            "funcion": "Guardar dibujo como."
+        }
+    ],
+    "Activa o desactiva los modos de dibujo": [
+        {
+            "id": "1",
+            "comando": "F1",
+            "funcion": "Muestra la Ayuda."
+        },
+        {
+            "id": "2",
+            "comando": "F2",
+            "funcion": "Activa o desactiva la pantalla de texto."
+        },
+        {
+            "id": "3",
+            "comando": "F3",
+            "funcion": "Activa o desactiva el modo de referencia a objetos."
+        },
+        {
+            "id": "4",
+            "comando": "F4",
+            "funcion": "Activa o desactiva 3DOSNAP."
+        },
+        {
+            "id": "5",
+            "comando": "F5",
+            "funcion": "Activa o desactiva el isoplano."
+        },
+        {
+            "id": "6",
+            "comando": "F6",
+            "funcion": "Activa o desactiva el SCP dinámico."
+        },
+        {
+            "id": "7",
+            "comando": "F7",
+            "funcion": "Activa o desactiva el modo de rejilla."
+        },
+        {
+            "id": "8",
+            "comando": "F8",
+            "funcion": "Activa o desactiva el modo ortogonal."
+        },
+        {
+            "id": "9",
+            "comando": "F9",
+            "funcion": "Activa o desactiva el modo de forzado de cursor."
+        },
+        {
+            "id": "10",
+            "comando": "F10",
+            "funcion": "Activa o desactiva el modo polar."
+        },
+        {
+            "id": "11",
+            "comando": "F11",
+            "funcion": "Activa o desactiva el rastreo de referencia a objetos."
+        },
+        {
+            "id": "12",
+            "comando": "F12",
+            "funcion": "Activa o desactiva el modo de entrada dinámica."
+        }
+    ],
+    "Gestionar el flujo de trabajo": [
+        {
+            "id": 1,
+            "comando": "Ctrl+A",
+            "funcion": "Permite seleccionar todos los objetos."
+        },
+        {
+            "id": 2,
+            "comando": "Ctrl+C",
+            "funcion": "Copia un objeto."
+        },
+        {
+            "id": 3,
+            "comando": "Ctrl+K",
+            "funcion": "Inserta un hipervínculo."
+        },
+        {
+            "id": 4,
+            "comando": "Ctrl+X",
+            "funcion": "Corta un objeto."
+        },
+        {
+            "id": 5,
+            "comando": "Ctrl+V",
+            "funcion": "Pega un objeto."
+        },
+        {
+            "id": 6,
+            "comando": "Ctrl+Shift+C",
+            "funcion": "Copia el contenido en el Portapapeles con el punto base."
+        },
+        {
+            "id": 7,
+            "comando": "Ctrl+Shift+V",
+            "funcion": "Pega los datos como un bloque."
+        },
+        {
+            "id": 8,
+            "comando": "Ctrl+Z",
+            "funcion": "Deshace la última acción."
+        },
+        {
+            "id": 9,
+            "comando": "Ctrl+Y",
+            "funcion": "Rehace la última acción."
+        },
+        {
+            "id": 10,
+            "comando": "Ctrl+[",
+            "funcion": "Cancela el comando actual (o Ctrl+\\)."
+        },
+        {
+            "id": 11,
+            "comando": "ESC",
+            "funcion": "Cancela el comando actual."
         }
     ]
 }

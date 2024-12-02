@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:shortcad/widgets/my_app_bar.dart';
 import 'package:shortcad/widgets/my_gesture_detector.dart';
 import 'package:shortcad/widgets/my_side_menu.dart';
+import 'package:shortcad/widgets/my_swipe_detector.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required String this.cat});
@@ -26,6 +27,26 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  onUpFunction() {
+    readJson("Activación/desactivación y administración de pantalla");
+    print(_items);
+  }
+
+  onRightFunction() {
+    readJson("Gestionar pantalla");
+    print(_items);
+  }
+
+  onDownFunction() {
+    readJson("Gestionar dibujos");
+    print(_items);
+  }
+
+  onLeftFunction() {
+    readJson("Activa o desactiva los modos de dibujo");
+    print(_items); 
+  }
+
   @override
   void initState() {
     if (widget.cat != "") {
@@ -37,10 +58,17 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(),
-      body: MyGestureDetector(
+      /*body: MyGestureDetector(
         lista: _items,
-        onTapFunction: () => readJson("Gestionar Pantalla"),
-        onDobleTapFunction: () => readJson("Gestionar Dibujos"),
+        onTapFunction: () => readJson("Gestionar pantalla"),
+        onDobleTapFunction: () => readJson("Activa o desactiva los modos de dibujo"),
+      ),*/
+      body: MySwipeDetector(
+        lista: _items,
+        onUpFunction: () => onUpFunction(),
+        onRightFunction: () => onRightFunction(),
+        onDownFunction: () => onDownFunction(),
+        onLeftFunction: () => onLeftFunction(),
       ),
       drawer: MySideMenu(),
     );
