@@ -6,10 +6,12 @@ class MyGestureDetector extends StatefulWidget {
   const MyGestureDetector(
       {super.key,
       required this.lista,
+      required String this.titulo,
       required this.onTapFunction,
       required this.onDobleTapFunction});
 
   final List lista;
+  final String titulo;
   final AsyncCallback onTapFunction;
   final AsyncCallback onDobleTapFunction;
   @override
@@ -24,7 +26,7 @@ class _MyGestureDetectorState extends State<MyGestureDetector> {
         onTap: widget.onTapFunction,
         onDoubleTap: widget.onDobleTapFunction,
         child: widget.lista.isNotEmpty
-            ? MyLista(lista: widget.lista)
+            ? MyLista(lista: widget.lista, titulo: widget.titulo)
             : Center(
                 child: Text("Realiza un gesto"),
               ),

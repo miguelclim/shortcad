@@ -19,11 +19,17 @@ class _MyListItemState extends State<MyListItem> {
       child: ListTile(
         title: Text(
           widget.item["comando"],
-          style: TextStyle(color: AppColors.neutral),
+          style: TextStyle(
+              color: AppColors.neutral,
+              fontSize: 20,
+              fontWeight: FontWeight.bold),
         ),
         subtitle: Text(
           widget.item["funcion"],
-          style: TextStyle(color: AppColors.neutral_2),
+          style: TextStyle(
+              color: AppColors.neutral_2,
+              fontSize: 16,
+              fontWeight: FontWeight.bold),
         ),
       ),
     );

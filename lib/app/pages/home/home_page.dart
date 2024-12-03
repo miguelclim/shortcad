@@ -17,13 +17,18 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List _items = [];
+  String _titulo = "";
+
   Future<void> readJson(String atajos) async {
     final String response =
         await rootBundle.loadString('lib/data/repositories/atajos.json');
     final data = await json.decode(response);
     setState(() {
       print("items: ${_items.length}");
-      _items.isNotEmpty ? _items = [] : _items = data[atajos];
+      //_items.isNotEmpty ? _items = [] : _items = data[atajos];
+      //_titulo.isNotEmpty ? _titulo = "" : _titulo = atajos;
+      _items = data[atajos];
+      _titulo = atajos;
     });
   }
 
@@ -44,7 +49,7 @@ class _HomePageState extends State<HomePage> {
 
   onLeftFunction() {
     readJson("Activa o desactiva los modos de dibujo");
-    print(_items); 
+    print(_items);
   }
 
   @override
@@ -65,6 +70,7 @@ class _HomePageState extends State<HomePage> {
       ),*/
       body: MySwipeDetector(
         lista: _items,
+        titulo: _titulo,
         onUpFunction: () => onUpFunction(),
         onRightFunction: () => onRightFunction(),
         onDownFunction: () => onDownFunction(),

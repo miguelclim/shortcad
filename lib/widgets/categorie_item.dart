@@ -20,7 +20,7 @@ class _CategorieItemState extends State<CategorieItem> {
       child: ListTile(
         title: Text(
           widget.item["nombre"],
-          style: TextStyle(color: AppColors.neutral),
+          style: TextStyle(color: AppColors.neutral, fontSize: 20,fontWeight: FontWeight.bold),
         ),
         onTap: () {
           Navigator.push(
