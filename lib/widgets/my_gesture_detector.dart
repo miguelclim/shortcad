@@ -6,7 +6,7 @@ class MyGestureDetector extends StatefulWidget {
   const MyGestureDetector(
       {super.key,
       required this.lista,
-      required String this.titulo,
+      required this.titulo,
       required this.onTapFunction,
       required this.onDobleTapFunction});
 

@@ -1,7 +1,5 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swipe_detector/flutter_swipe_detector.dart';
-import 'package:shortcad/app/pages/home/home_page.dart';
 import 'package:shortcad/app/utils/app_colors.dart';
 import 'package:shortcad/widgets/my_list.dart';
 
@@ -9,7 +7,7 @@ class MySwipeDetector extends StatefulWidget {
   const MySwipeDetector(
       {super.key,
       required this.lista,
-      required String this.titulo,
+      required this.titulo,
       required this.onUpFunction,
       required this.onRightFunction,
       required this.onDownFunction,

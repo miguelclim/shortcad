@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:shortcad/app/pages/home/categories_page.dart';
 import 'package:shortcad/app/pages/home/home_page.dart';
 import 'package:shortcad/app/utils/app_colors.dart';
-import 'package:open_whatsapp/open_whatsapp.dart';
 
 class MySideMenu extends StatefulWidget {
   const MySideMenu({super.key});
