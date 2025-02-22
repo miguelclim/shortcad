@@ -28,7 +28,7 @@ class _MySideMenuState extends State<MySideMenu> {
             title: const Text("Inicio",style: TextStyle(color: AppColors.secondary)),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const HomePage(cat: "",)));
+                  MaterialPageRoute(builder: (context) => const HomePage(cat: "Gestionar pantalla",)));
             },
           ),
           ListTile(

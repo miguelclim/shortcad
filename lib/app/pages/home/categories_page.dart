@@ -26,6 +26,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
   }
 
   @override
+  // ignore: must_call_super
   void initState() {
     readJson();
   }
