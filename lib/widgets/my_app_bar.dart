@@ -15,12 +15,12 @@ class _MyAppBarState extends State<MyAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: const Text(
+      title: Text(
         "Shortcad",
-        style: TextStyle(color: AppColors.neutral),
+        style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
       ),
-      backgroundColor: AppColors.primary,
-      iconTheme: IconThemeData(color: AppColors.neutral),
+      backgroundColor: Theme.of(context).colorScheme.primary,
+      iconTheme: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
     );
   }
 }

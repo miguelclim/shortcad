@@ -16,7 +16,7 @@ class _MyTittleState extends State<MyTittle> {
     return Text(
       widget.titulo,
       style: TextStyle(
-          color: AppColors.primary, fontSize: 29, fontWeight: FontWeight.bold),
+          color: Theme.of(context).colorScheme.onBackground, fontSize: 29, fontWeight: FontWeight.bold),
       textAlign: TextAlign.center,
     );
   }

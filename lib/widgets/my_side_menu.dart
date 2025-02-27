@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shortcad/app/pages/home/categories_page.dart';
-import 'package:shortcad/app/pages/home/home_page.dart';
+import 'package:shortcad/app/pages/categories_page.dart';
+import 'package:shortcad/app/pages/home_page.dart';
+import 'package:shortcad/app/pages/settings_page.dart';
 import 'package:shortcad/app/utils/app_colors.dart';
 
 class MySideMenu extends StatefulWidget {
@@ -17,23 +18,23 @@ class _MySideMenuState extends State<MySideMenu> {
       child: ListView(
         children: [
           DrawerHeader(
-            decoration: BoxDecoration(color: AppColors.primary),
+            decoration: BoxDecoration(color: Theme.of(context).colorScheme.background),
             child: Text(
               "Shortcad",
-              style: TextStyle(color: AppColors.neutral,fontSize: 31),
+              style: TextStyle(color: Theme.of(context).colorScheme.onPrimary,fontSize: 31),
             ),
           ),
           ListTile(
-            leading: Icon(Icons.home_outlined,color: AppColors.primary,),
-            title: const Text("Inicio",style: TextStyle(color: AppColors.secondary)),
+            leading: Icon(Icons.home_outlined,color: Theme.of(context).colorScheme.secondary,),
+            title: Text("Inicio",style: TextStyle(color: Theme.of(context).colorScheme.secondary )),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const HomePage(cat: "Gestionar pantalla",)));
+                  MaterialPageRoute(builder: (context) => const HomePage(cat: "",)));
             },
           ),
           ListTile(
-            leading: Icon(Icons.category_outlined,color: AppColors.primary),
-            title: const Text("Categorias",style: TextStyle(color: AppColors.secondary),),
+            leading: Icon(Icons.category_outlined,color: Theme.of(context).colorScheme.secondary),
+            title: Text("Categorias",style: TextStyle(color: Theme.of(context).colorScheme.secondary),),
             onTap: () {
               Navigator.push(
                   context,
@@ -41,11 +42,21 @@ class _MySideMenuState extends State<MySideMenu> {
                       builder: (context) => const CategoriesPage()));
             },
           ),
-          Divider(color: AppColors.primary,),
-          ListTile(            
-            leading: Icon(Icons.phone_outlined,color: AppColors.primary),
-            title: const Text("Contactanos",style: TextStyle(color: AppColors.secondary),),
-          )
+          ListTile(
+            leading: Icon(Icons.settings,color: Theme.of(context).colorScheme.secondary),
+            title: Text("Ajustes",style: TextStyle(color: Theme.of(context).colorScheme.secondary),),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const SettingsPage()));
+            },
+          ),
+          // Divider(color: Theme.of(context).colorScheme.secondary,),
+          // ListTile(            
+          //   leading: Icon(Icons.phone_outlined,color: Theme.of(context).colorScheme.secondary),
+          //   title: Text("Contactanos",style: TextStyle(color: Theme.of(context).colorScheme.secondary),),
+          // )
         ],
       ),
     );

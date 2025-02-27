@@ -44,7 +44,7 @@ class _MySwipeDetectorState extends State<MySwipeDetector> {
             },
             onSwipeLeft: (Offset) {
               print("Izquierda");
-              widget.onLeftFunction();
+              widget.onLeftFunction(); 
             },
             child: widget.lista.isNotEmpty
                 ? MyLista(lista: widget.lista, titulo: widget.titulo)

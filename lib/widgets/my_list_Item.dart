@@ -15,19 +15,19 @@ class _MyListItemState extends State<MyListItem> {
     return Card(
       key: ValueKey(widget.item["id"]),
       margin: const EdgeInsets.all(10),
-      color: AppColors.primary,
+      color: Theme.of(context).colorScheme.secondary,
       child: ListTile(
         title: Text(
           widget.item["comando"],
           style: TextStyle(
-              color: AppColors.neutral,
+              color: Theme.of(context).colorScheme.onSecondary,
               fontSize: 20,
               fontWeight: FontWeight.bold),
         ),
         subtitle: Text(
           widget.item["funcion"],
           style: TextStyle(
-              color: AppColors.neutral_2,
+              color: Theme.of(context).colorScheme.onSecondary,
               fontSize: 16,
               fontWeight: FontWeight.bold),
         ),

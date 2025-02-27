@@ -2,21 +2,26 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:shortcad/data/atajos.dart';
 import 'package:shortcad/widgets/my_app_bar.dart';
+import 'package:shortcad/widgets/my_list.dart';
+import 'package:shortcad/widgets/my_multi_finger_detector.dart';
+import 'package:shortcad/widgets/my_gesture_detector.dart';
 import 'package:shortcad/widgets/my_side_menu.dart';
-import 'package:shortcad/widgets/my_swipe_detector.dart';
-import 'package:shortcad/widgets/my_finger_detector.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key, required this.cat, this.id});
+class ListPage extends StatefulWidget {
+  const ListPage({super.key, required this.cat, this.id});
 
   final String cat;
   final int? id;
+
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<ListPage> createState() => _ListPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _ListPageState extends State<ListPage> {
+  Atajo atajos = Atajo();
+
   List _items = [];
   String _titulo = "";
 
@@ -30,36 +35,18 @@ class _HomePageState extends State<HomePage> {
       _items = data[atajos] ?? []; // Aseguramos que sea una lista
       _titulo = atajos;
 
-      if (id != null) {
+      if (id != null && id != 0) {
         _items.removeWhere((item) => item["id"].toString() != id.toString());
       }
       print("items: ${_items.length}");
+      print(_titulo);
     });
-  }
-
-  onUpFunction() {
-    readJson("Activación/desactivación y administración de pantalla", null);
-    print(_items);
-  }
-
-  onRightFunction() {
-    readJson("Gestionar pantalla", null);
-    print(_items);
-  }
-
-  onDownFunction() {
-    readJson("Gestionar dibujos", null);
-    print(_items);
-  }
-
-  onLeftFunction() {
-    readJson("Activa o desactiva los modos de dibujo", null);
-    print(_items);
   }
 
   @override
   // ignore: must_call_super
   void initState() {
+    super.initState();
     if (widget.cat != "") {
       readJson(widget.cat, widget.id);
     }
@@ -69,19 +56,20 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(),
-      /*body: MyGestureDetector(
-        lista: _items,
-        onTapFunction: () => readJson("Gestionar pantalla"),
-        onDobleTapFunction: () => readJson("Activa o desactiva los modos de dibujo"),
-      ),*/
-      body: MySwipeDetector(
+      appBar: AppBar(
+        leading: BackButton(
+          onPressed: () => Navigator.pop(context),
+        ),
+      ),
+      // body: MyGestureDetector(
+      //   lista: _items,
+      //   titulo: _titulo,
+      //   onTapFunction: () => readJson("Gestionar pantalla", null),
+      //   onDobleTapFunction: () => readJson("Activa o desactiva los modos de dibujo", null),
+      // ),
+      body: MyLista(
         lista: _items,
         titulo: _titulo,
-        onUpFunction: () => onUpFunction(),
-        onRightFunction: () => onRightFunction(),
-        onDownFunction: () => onDownFunction(),
-        onLeftFunction: () => onLeftFunction(),
       ),
       drawer: MySideMenu(),
     );
