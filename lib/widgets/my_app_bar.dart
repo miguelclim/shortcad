@@ -16,10 +16,10 @@ class _MyAppBarState extends State<MyAppBar> {
   Widget build(BuildContext context) {
     return AppBar(
       title: Text(
-        "Shortcad",
+        "Accesos directos de AutoCAD",
         style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
       ),
-      backgroundColor: Theme.of(context).colorScheme.primary,
+      backgroundColor: Theme.of(context).colorScheme.background,
       iconTheme: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
     );
   }

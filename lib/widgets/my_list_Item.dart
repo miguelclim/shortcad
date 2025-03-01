@@ -20,16 +20,18 @@ class _MyListItemState extends State<MyListItem> {
         title: Text(
           widget.item["comando"],
           style: TextStyle(
-              color: Theme.of(context).colorScheme.onSecondary,
-              fontSize: 20,
+              color: Theme.of(context).colorScheme.primary,
+              fontSize: 18,
               fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
         ),
         subtitle: Text(
           widget.item["funcion"],
           style: TextStyle(
               color: Theme.of(context).colorScheme.onSecondary,
               fontSize: 16,
-              fontWeight: FontWeight.bold),
+              fontWeight: FontWeight.normal),
+              textAlign: TextAlign.center,
         ),
       ),
     );

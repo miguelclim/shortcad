@@ -60,6 +60,9 @@ class _ListPageState extends State<ListPage> {
         leading: BackButton(
           onPressed: () => Navigator.pop(context),
         ),
+        backgroundColor: Theme.of(context).colorScheme.background,
+        iconTheme:
+            IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
       ),
       // body: MyGestureDetector(
       //   lista: _items,

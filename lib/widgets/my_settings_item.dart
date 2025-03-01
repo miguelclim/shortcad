@@ -49,12 +49,17 @@ class _MySettingsItemState extends State<MySettingsItem> {
     List<Map<String, dynamic>> lista =
         await atajo.readJson(_selectedCategoria!, _selectedAtajo);
     if (_selectedAtajo != 0) {
-      _comando = lista[0]["comando"];
-      _funcion = lista[0]["funcion"];
+      setState(() {
+        _comando = lista[0]["comando"];
+        _funcion = lista[0]["funcion"];
+      });
     } else {
-      _comando = "Eliga un comando";
-      _funcion = "";
+      setState(() {
+        _comando = "";
+        _funcion = "";
+      });
     }
+    print(_selectedAtajo);
   }
 
   void initSettingItem() {
@@ -84,31 +89,42 @@ class _MySettingsItemState extends State<MySettingsItem> {
       child: Column(
         children: [
           ListTile(
+            leading: Icon(Icons.handyman_outlined),
             title: Text(
               widget.gesto,
-              style:
-                  TextStyle(color: Theme.of(context).colorScheme.onSecondary),
+              style: TextStyle(color: Theme.of(context).colorScheme.primary),
             ),
             subtitle: Text(
-              "$_selectedCategoria -> $_comando -> $_funcion",
+              "$_selectedCategoria",
               style:
                   TextStyle(color: Theme.of(context).colorScheme.onSecondary),
             ),
           ),
-          SizedBox(
-            child: Row(
-              children: [
-                TextButton(
-                    onPressed: _actualizarAjuste,
-                    child: Icon(Icons.edit,color: Theme.of(context).colorScheme.onSecondary)),
-                TextButton(
-                  onPressed: () {
-                    widget.db.borrarPorIndice(widget.index);
-                  },
-                  child: Icon(Icons.delete,color: Theme.of(context).colorScheme.onSecondary,))
-              ],
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              "$_comando \n$_funcion",
+              style:
+                  TextStyle(color: Theme.of(context).colorScheme.onSecondary),
             ),
-          )
+          ),
+          ButtonBar(
+            alignment: MainAxisAlignment.end,
+            children: [
+              TextButton(
+                  onPressed: _actualizarAjuste,
+                  child: Icon(Icons.edit,
+                      color: Theme.of(context).colorScheme.primary)),
+              // TextButton(
+              //       onPressed: () {
+              //         widget.db.borrarPorIndice(widget.index);
+              //       },
+              //       child: Icon(
+              //         Icons.delete,
+              //         color: Theme.of(context).colorScheme.onSecondary,
+              //       ))
+            ],
+          ),
         ],
       ),
     );
@@ -138,7 +154,7 @@ class _MySettingsItemState extends State<MySettingsItem> {
                     onSelected: (value) {
                       setDialogState(() {
                         _selectedCategoria = value;
-                        _selectedAtajo = null;
+                        _selectedAtajo = 0;
                       });
                       _cargarAtajos();
                     },
@@ -153,7 +169,7 @@ class _MySettingsItemState extends State<MySettingsItem> {
                     hintText: "Seleccione un atajo",
                     dropdownMenuEntries: _atajos
                         .map((item) => DropdownMenuEntry(
-                            value: item["id"], label: item["comando"]))
+                            value: item["id"], label: item['comando'] ))
                         .toList(),
                     onSelected: (value) {
                       setDialogState(() {
@@ -174,10 +190,12 @@ class _MySettingsItemState extends State<MySettingsItem> {
                       }
                       widget.db.actualizarAjuste(widget.index, widget.ajuste);
                       _cargarComando();
-                      print(_selectedCategoria);
-                      print(_selectedAtajo);
                     },
-                    child: Text('Guardar',style: TextStyle(color:Theme.of(context).colorScheme.onSecondary ),))
+                    child: Text(
+                      'Guardar',
+                      style: TextStyle(
+                          color: Theme.of(context).colorScheme.primary),
+                    ))
               ],
             );
           },

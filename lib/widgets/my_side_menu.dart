@@ -25,16 +25,16 @@ class _MySideMenuState extends State<MySideMenu> {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.home_outlined,color: Theme.of(context).colorScheme.secondary,),
-            title: Text("Inicio",style: TextStyle(color: Theme.of(context).colorScheme.secondary )),
+            leading: Icon(Icons.home_outlined,color: Theme.of(context).colorScheme.primary,),
+            title: Text("Inicio",style: TextStyle(color: Theme.of(context).colorScheme.primary )),
             onTap: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const HomePage(cat: "",)));
             },
           ),
           ListTile(
-            leading: Icon(Icons.category_outlined,color: Theme.of(context).colorScheme.secondary),
-            title: Text("Categorias",style: TextStyle(color: Theme.of(context).colorScheme.secondary),),
+            leading: Icon(Icons.category_outlined,color: Theme.of(context).colorScheme.primary),
+            title: Text("Categorias",style: TextStyle(color: Theme.of(context).colorScheme.primary),),
             onTap: () {
               Navigator.push(
                   context,
@@ -43,8 +43,8 @@ class _MySideMenuState extends State<MySideMenu> {
             },
           ),
           ListTile(
-            leading: Icon(Icons.settings,color: Theme.of(context).colorScheme.secondary),
-            title: Text("Ajustes",style: TextStyle(color: Theme.of(context).colorScheme.secondary),),
+            leading: Icon(Icons.settings,color: Theme.of(context).colorScheme.primary),
+            title: Text("Ajustes",style: TextStyle(color: Theme.of(context).colorScheme.primary),),
             onTap: () {
               Navigator.push(
                   context,

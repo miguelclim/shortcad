@@ -477,14 +477,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.0"
-  multi_finger_gesture_detector:
-    dependency: "direct main"
-    description:
-      name: multi_finger_gesture_detector
-      sha256: "6d6d8d578e2cd373def70c921249c255fa2d1d19fc90a92f1f3b0fd4bf0d2013"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.1"
   package_config:
     dependency: transitive
     description:
